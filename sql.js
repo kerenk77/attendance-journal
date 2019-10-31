@@ -7,7 +7,7 @@ mysql.createPool({
     host: "localhost",
     user: "root",
     password: "beitar",
-    database: "attendance-journal"
+    database: "my_school"
 }).then((c) => {
     db = c;
     return db.query("SELECT * FROM my_school.`mehina-girls`")
