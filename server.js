@@ -1,6 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const registration = require("./registration.js");
+const test = require('/sql.js');
 
 const port = process.env.PORT || 80;
 const app = express();
