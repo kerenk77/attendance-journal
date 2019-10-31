@@ -1,7 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const registration = require("./registration.js");
-const test = require('/sql.js');
+const test = require('./sql.js');
 
 const port = process.env.PORT || 80;
 const app = express();
@@ -32,5 +32,6 @@ app.post('/registration/register', (req, res) => {
 app.post('/registration/login', (req, res) => {
     return registration.login(req, res);
 });
+console.log(test);
 
 app.listen(port, () => console.log('Example app listening on port ' + port));

@@ -10,10 +10,14 @@ mysql.createPool({
     database: "attendance-journal"
 }).then((c) => {
     db = c;
+    return db.query("SELECT * FROM my_school.`mehina-girls`")
+}).then((my_school) => {
+    console.log(my_school)
 }).catch((e) => {
     console.error(e);
 });
 
-module.exports = function (req, res) {
+// module.exports = function (req, res) {
+//     res.send(db.my_school);
 
-}
+// }
