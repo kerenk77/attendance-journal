@@ -10,14 +10,13 @@ mysql.createPool({
     database: "my_school"
 }).then((c) => {
     db = c;
-    return db.query("SELECT * FROM my_school.`mehina-girls`")
 }).then((my_school) => {
     console.log(my_school)
 }).catch((e) => {
     console.error(e);
 });
 
-// module.exports = function (req, res) {
-//     res.send(db.my_school);
-
-// }
+module.exports = async function (req, res) {
+    let data = await db.query("SELECT * FROM my_school.`mehina-girls`")
+    res.send(data);
+}

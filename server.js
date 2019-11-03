@@ -1,7 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const registration = require("./registration.js");
-const test = require('./sql.js');
+const sql = require('./sql.js');
 
 const port = process.env.PORT || 80;
 const app = express();
@@ -12,6 +12,10 @@ app.use(express.urlencoded());
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json());
 app.use(express.static('public'));
+
+app.get('/test', (req, res) => {
+    return sql(req, res);
+});
 
 app.get('/', (req, res) => res.sendFile('./public/pages/project.html', {
     root: __dirname
@@ -32,6 +36,5 @@ app.post('/registration/register', (req, res) => {
 app.post('/registration/login', (req, res) => {
     return registration.login(req, res);
 });
-console.log(test);
 
 app.listen(port, () => console.log('Example app listening on port ' + port));
