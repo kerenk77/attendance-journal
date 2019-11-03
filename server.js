@@ -5,6 +5,7 @@ const sql = require('./sql.js');
 
 const port = process.env.PORT || 80;
 const app = express();
+app.set('view engine', 'ejs');
 
 app.use(cookieParser());
 // Parse URL-encoded bodies (as sent by HTML forms)
@@ -17,7 +18,8 @@ app.get('/test', (req, res) => {
     return sql(req, res);
 });
 
-app.get('/', (req, res) => res.sendFile('./public/pages/project.html', {
+
+app.get('/', (req, res) => res.render('./pages/project', {
     root: __dirname
 }));
 app.get('/registration', (req, res) => res.sendFile('./pages/Registration.html', {
