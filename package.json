@@ -17,7 +17,7 @@
     "promise-mysql": "^4.1.1"
   },
   "devDependencies": {
-    "nodemon": "^1.19.2",
+    "nodemon": "^1.19.4",
     "reload": "^3.0.1"
   },
   "description": ""

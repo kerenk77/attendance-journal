@@ -10,13 +10,12 @@ mysql.createPool({
     database: "heroku_8e032dbd0b28bea"
 }).then((c) => {
     db = c;
-}).then((heroku_8e032dbd0b28bea) => {
-    console.log(heroku_8e032dbd0b28bea)
-}).catch((e) => {
+}).then((heroku_8e032dbd0b28bea) => {}).catch((e) => {
     console.error(e);
 });
 
 module.exports = async function (req, res) {
     let data = await db.query("SELECT * FROM heroku_8e032dbd0b28bea.`mehina-girls`");
+    console.log(data);
     res.send(data);
 }
