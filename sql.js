@@ -10,13 +10,12 @@ mysql.createPool({
     database: process.env.MYSQL_DB
 }).then((c) => {
     db = c;
-
+    console.log(db);
 }).catch((e) => {
     console.error(e);
 });
 
 module.exports = async function (req, res) {
-    let data = await db.query("SELECT * FROM `mehina_girls`");
-    console.log(data);
+    let data = await db.query("SELECT * FROM teachers");
     res.send(data);
 }
