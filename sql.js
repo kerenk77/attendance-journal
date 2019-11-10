@@ -15,7 +15,7 @@ mysql.createPool({
 });
 
 module.exports = async function (req, res) {
-    let data = await db.query("SELECT * FROM heroku_21ff2f1f46864dc.'mehina_girls'");
+    let data = await db.query("SELECT * FROM heroku_21ff2f1f46864dc.`mehina_girls`");
     console.log(data);
     res.send(data);
 }
